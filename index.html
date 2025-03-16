@@ -12,39 +12,61 @@
   <script src="lib/katex.min.js"></script>
 </head>  
 <body>  
-  <div class="container">  
-    <!-- 左侧编辑区域 -->  
-    <div class="editor-panel">  
-      <input type="text" id="title" placeholder="请输入标题">  
-      <div class="limits">  
-        <input type="number" id="time-limit" placeholder="时间限制（ms）">  
-        <input type="number" id="memory-limit" placeholder="内存限制（MB）">  
-      </div>  
-      <div class="editor-section">
-        <h3>题目描述</h3>
-        <div id="problem-description-editor"></div>
+  <div class="app-container">
+    <!-- 左侧侧边栏 -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-title-container">
+          <h2>题目列表</h2>
+          <a href="https://github.com/yuechuuu/problem_editor_server" target="_blank" class="github-link" title="View on GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="github-icon">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+          </a>
+        </div>
+        <button id="new-problem-btn" class="new-btn">+ 新建题目</button>
       </div>
-      <div class="editor-section">
-        <h3>输入描述</h3>
-        <div id="input-description-editor"></div>
+      <div class="sidebar-content" id="problem-list">
+        <!-- 题目列表将在这里动态生成 -->
       </div>
-      <div class="editor-section">
-        <h3>输出描述</h3>
-        <div id="output-description-editor"></div>
-      </div>
-      <div id="examples-container">  
-        <button class="add-example-btn" onclick="addExample()">+ 添加示例</button>  
-      </div>  
-      <!-- 添加保存按钮 -->
-      <div class="save-container">
-        <button id="save-btn" class="save-btn" onclick="saveContent()">保存题目</button>
-        <span id="save-status"></span>
-      </div>
-    </div>  
+    </div>
 
-    <!-- 右侧预览区域 -->  
-    <div class="preview-panel" id="preview"></div>  
-  </div>  
+    <div class="main-content">
+      <div class="container">  
+        <!-- 左侧编辑区域 -->  
+        <div class="editor-panel">  
+          <input type="text" id="title" placeholder="请输入标题">  
+          <div class="limits">  
+            <input type="number" id="time-limit" placeholder="时间限制（ms）">  
+            <input type="number" id="memory-limit" placeholder="内存限制（MB）">  
+          </div>  
+          <div class="editor-section">
+            <h3>题目描述</h3>
+            <div id="problem-description-editor"></div>
+          </div>
+          <div class="editor-section">
+            <h3>输入描述</h3>
+            <div id="input-description-editor"></div>
+          </div>
+          <div class="editor-section">
+            <h3>输出描述</h3>
+            <div id="output-description-editor"></div>
+          </div>
+          <div id="examples-container">  
+            <button class="add-example-btn" onclick="addExample()">+ 添加示例</button>  
+          </div>  
+          <!-- 添加保存按钮 -->
+          <div class="save-container">
+            <button id="save-btn" class="save-btn" onclick="saveContent()">保存题目</button>
+            <span id="save-status"></span>
+          </div>
+        </div>  
+
+        <!-- 右侧预览区域 -->  
+        <div class="preview-panel" id="preview"></div>  
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>  
 </body>  
